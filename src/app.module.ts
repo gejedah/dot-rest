@@ -27,7 +27,7 @@ import { UserModule } from './user/user.module';
       }),
       inject: [ConfigService],
     }),
-    UserModule
+    UserModule,
   ],
   controllers: [AppController, EmployeeController],
   providers: [AppService, EmployeeService],
