@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { User } from './user/user.entity'; // Ensure this path is correct
+import { Transaction } from './transaction/transaction.entity';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,7 +22,7 @@ import { User } from './user/user.entity'; // Ensure this path is correct
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: [User], // Path to your entities
+        entities: [User, Transaction], // Path to your entities
         synchronize: false, // **IMPORTANT: Set to false in production! Use migrations.**
         logging: true, // Enable TypeORM logging (useful for development)
       }),
