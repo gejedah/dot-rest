@@ -6,7 +6,9 @@ import { EmployeeService } from './employee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
-
+import { UserController } from './user/user.controller';
+import { UserService } from './user/user.service';
+import { User } from './user/user.entity'; // Ensure this path is correct
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -21,7 +23,7 @@ import { UserModule } from './user/user.module';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: ['./user/user.entity.ts'], // Path to your entities
+        entities: [User], // Path to your entities
         synchronize: false, // **IMPORTANT: Set to false in production! Use migrations.**
         logging: true, // Enable TypeORM logging (useful for development)
       }),
@@ -29,7 +31,7 @@ import { UserModule } from './user/user.module';
     }),
     UserModule,
   ],
-  controllers: [AppController, EmployeeController],
-  providers: [AppService, EmployeeService],
+  controllers: [AppController, EmployeeController, UserController],
+  providers: [AppService, EmployeeService, UserService],
 })
 export class AppModule {}
