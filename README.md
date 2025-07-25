@@ -1,4 +1,5 @@
-using local database
+using local database postgre 16
+node version 20 above
 
 
 <p align="center">
