@@ -21,7 +21,7 @@ import { UserModule } from './user/user.module';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE'),
-        entities: [__dirname + '/**/*.entity{.ts,.js}'], // Path to your entities
+        entities: ['./user/user.entity.ts'], // Path to your entities
         synchronize: false, // **IMPORTANT: Set to false in production! Use migrations.**
         logging: true, // Enable TypeORM logging (useful for development)
       }),
