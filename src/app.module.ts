@@ -8,6 +8,8 @@ import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { User } from './user/user.entity'; // Ensure this path is correct
 import { Transaction } from './transaction/transaction.entity';
+import { TransactionController } from './transaction/transaction.controller';
+import { TransactionService } from './transaction/transaction.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -30,7 +32,7 @@ import { Transaction } from './transaction/transaction.entity';
     }),
     UserModule,
   ],
-  controllers: [AppController, UserController],
-  providers: [AppService, UserService],
+  controllers: [AppController, UserController, TransactionController],
+  providers: [AppService, UserService, TransactionService],
 })
 export class AppModule {}
