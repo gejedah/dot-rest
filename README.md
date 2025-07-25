@@ -1,4 +1,12 @@
 <p align="center">
+  using local database postgre 16
+</p>
+
+<p align="center">
+  node version 20 above
+</p>
+
+<p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
