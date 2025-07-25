@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EmployeeController } from './employee.controller';
-import { EmployeeService } from './employee.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
@@ -31,7 +29,7 @@ import { User } from './user/user.entity'; // Ensure this path is correct
     }),
     UserModule,
   ],
-  controllers: [AppController, EmployeeController, UserController],
-  providers: [AppService, EmployeeService, UserService],
+  controllers: [AppController, UserController],
+  providers: [AppService, UserService],
 })
 export class AppModule {}
