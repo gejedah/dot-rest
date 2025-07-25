@@ -10,6 +10,7 @@ export class TransactionService {
     private transactionRepository: Repository<Transaction>,
   ) {}
 
+
   findAll(): Promise<Transaction[]> {
     return this.transactionRepository.find();
   }

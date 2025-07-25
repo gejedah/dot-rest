@@ -10,6 +10,7 @@ import { User } from './user/user.entity'; // Ensure this path is correct
 import { Transaction } from './transaction/transaction.entity';
 import { TransactionController } from './transaction/transaction.controller';
 import { TransactionService } from './transaction/transaction.service';
+import { TransactionModule } from './transaction/transaction.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -31,6 +32,7 @@ import { TransactionService } from './transaction/transaction.service';
       inject: [ConfigService],
     }),
     UserModule,
+    TransactionModule,
   ],
   controllers: [AppController, UserController, TransactionController],
   providers: [AppService, UserService, TransactionService],
