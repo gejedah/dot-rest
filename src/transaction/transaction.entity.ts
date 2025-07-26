@@ -14,7 +14,7 @@ export class Transaction {
   amount: number;
 
   @Column()
-  type: string; // e.g., 'credit' or 'debit'
+  type: string;
 
   @CreateDateColumn()
   createdat: Date;
